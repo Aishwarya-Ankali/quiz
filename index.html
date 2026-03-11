@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Segoe UI", sans-serif;
+      display: flex; justify-content: center; align-items: center;
+      min-height: 100vh; background: #F1F5F9;
+    }
+    .calculator {
+      width: 320px; background: #1E293B;
+      border-radius: 20px; padding: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    .display {
+      background: #0F172A; border-radius: 12px;
+      padding: 20px; margin-bottom: 16px; text-align: right;
+      min-height: 90px; display: flex; flex-direction: column;
+      justify-content: flex-end;
+    }
+    #previous {
+      font-size: 0.9rem; color: #64748B; min-height: 1.2em;
+    }
+    #current {
+      font-size: 2.5rem; color: white; font-weight: 700;
+      word-break: break-all;
+    }
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    button {
+      padding: 18px; font-size: 1.3rem; font-weight: 600;
+      border: none; border-radius: 12px; cursor: pointer;
+      transition: transform 0.1s, background 0.2s;
+    }
+    button:active { transform: scale(0.93); }
+    .num    { background: #334155; color: white; }
+    .num:hover { background: #475569; }
+    .op     { background: #3B82F6; color: white; }
+    .op:hover { background: #2563EB; }
+    .equals { background: #16A34A; color: white; grid-column: span 2; }
+    .equals:hover { background: #15803D; }
+    .clear  { background: #DC2626; color: white; }
+    .clear:hover { background: #B91C1C; }
+    .delete { background: #F59E0B; color: white; }
+    .delete:hover { background: #D97706; }
+    .zero   { grid-column: span 2; }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <div class="display">
+      <div id="previous"></div>
+      <div id="current">0</div>
+    </div>
+    <div class="buttons">
+      <button class="clear">AC</button>
+      <button class="delete">DEL</button>
+      <button class="op" data-op="%">%</button>
+      <button class="op" data-op="/">÷</button>
+      <button class="num" data-num="7">7</button>
+      <button class="num" data-num="8">8</button>
+      <button class="num" data-num="9">9</button>
+      <button class="op" data-op="*">×</button>
+      <button class="num" data-num="4">4</button>
+      <button class="num" data-num="5">5</button>
+      <button class="num" data-num="6">6</button>
+      <button class="op" data-op="-">−</button>
+      <button class="num" data-num="1">1</button>
+      <button class="num" data-num="2">2</button>
+      <button class="num" data-num="3">3</button>
+      <button class="op" data-op="+">+</button>
+      <button class="num zero" data-num="0">0</button>
+      <button class="num" data-num=".">.</button>
+      <button class="equals">=</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
